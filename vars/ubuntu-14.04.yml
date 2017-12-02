@@ -23,3 +23,9 @@ _apt_repository: [
 _apt: [
   { state: "latest", name: "varnish" },
 ]
+_template: [
+  { src: "etc/default/varnish.j2", dest: "/etc/default/varnish", owner: "root", group: "root", mode: "0644" },
+  { src: "etc/varnish/default.vcl.j2", dest: "/etc/varnish/default.vcl", owner: "root", group: "root", mode: "0644" },
+  { src: "etc/varnish/secret.j2", dest: "/etc/varnish/secret", owner: "root", group: "root", mode: "0600" },
+  { src: "lib/systemd/system/varnish.service.j2", dest: "/lib/systemd/system/varnish.service", owner: "root", group: "root", mode: "0644" },
+]

@@ -14,6 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Default address and port to bind to
+varnish_listen_address: ""
+varnish_listen_port: "6081"
+
+# Telnet admin interface listen address and port
+varnish_admin_listen_address: "127.0.0.1"
+varnish_admin_listen_port: "6082"
+
+# Backend storage specification
+varnish_storage: "malloc,256m"
+
 # Secret used for authorizing access to the management port.
 varnish_secret: "e7316eca-9737-4c86-bed7-bccf05f17558"
 
