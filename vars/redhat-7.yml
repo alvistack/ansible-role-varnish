@@ -14,10 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Secret used for authorizing access to the management port.
-varnish_secret: "e7316eca-9737-4c86-bed7-bccf05f17558"
-
-# A backend declaration creates and initialises a named backend object.
-varnish_backend: [
-  { name: "default", host: "127.0.0.1", port: "8080" },
+_yum_repository: [
+  {
+    file: "varnishcache_varnish5",
+    name: "varnishcache_varnish5",
+    description: "varnishcache_varnish5",
+    baseurl: "https://packagecloud.io/varnishcache/varnish5/el/7/$basearch",
+    repo_gpgcheck: "yes",
+    gpgcheck: "no",
+    enabled: "yes",
+    gpgkey: "https://packagecloud.io/varnishcache/varnish5/gpgkey",
+    sslverify: "yes",
+    sslcacert: "/etc/pki/tls/certs/ca-bundle.crt",
+    metadata_expire: "300",
+  },
+]
+_yum: [
+  { state: "latest", name: "varnish" },
 ]

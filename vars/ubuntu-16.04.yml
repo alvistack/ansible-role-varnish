@@ -14,10 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Secret used for authorizing access to the management port.
-varnish_secret: "e7316eca-9737-4c86-bed7-bccf05f17558"
-
-# A backend declaration creates and initialises a named backend object.
-varnish_backend: [
-  { name: "default", host: "127.0.0.1", port: "8080" },
+_apt_key: [
+  { state: "present", id: "C23F55C5", url: "https://packagecloud.io/varnishcache/varnish5/gpgkey" },
+]
+_apt_repository: [
+  { state: "present", repo: "deb https://packagecloud.io/varnishcache/varnish5/ubuntu/ xenial main" },
+]
+_apt: [
+  { state: "latest", name: "varnish" },
 ]
