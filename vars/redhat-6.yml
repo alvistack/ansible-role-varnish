@@ -13,3 +13,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+_yum_repo: [
+  {
+    file: "varnishcache_varnish5",
+    name: "varnishcache_varnish5",
+    description: "varnishcache_varnish5",
+    baseurl: "https://packagecloud.io/varnishcache/varnish5/el/6/$basearch",
+    repo_gpgcheck: "yes",
+    gpgcheck: "no",
+    enabled: "yes",
+    gpgkey: "https://packagecloud.io/varnishcache/varnish5/gpgkey",
+    sslverify: "yes",
+    sslcacert: "/etc/pki/tls/certs/ca-bundle.crt",
+    metadata_expire: "300",
+  },
+]
+_yum: [
+  { state: "latest", name: "varnish" },
+]

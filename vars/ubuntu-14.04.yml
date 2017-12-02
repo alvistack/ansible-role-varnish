@@ -13,3 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+_apt_key: [
+  { state: "present", id: "3E925951", url: "https://packagecloud.io/varnishcache/varnish5/gpgkey" },
+]
+_apt_repository: [
+  { state: "present", repo: "deb https://packagecloud.io/varnishcache/varnish5/ubuntu/ trusty main" },
+]
+_apt: [
+  { state: "latest", name: "varnish" },
+]
