@@ -53,7 +53,7 @@
     mode: "{{ item.mode }}"
   with_items:
     - { src: "etc/varnish/default.vcl.j2", dest: "/etc/varnish/default.vcl", owner: "root", group: "root", mode: "0644" }
-    - { src: "etc/varnish/secret.j2", dest: "/etc/varnish/secret", owner: "root", group: "root", mode: "0644" }
+    - { src: "etc/varnish/secret.j2", dest: "/etc/varnish/secret", owner: "root", group: "root", mode: "0600" }
   tags: varnish
 
 - name: enable service

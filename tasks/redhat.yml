@@ -27,7 +27,7 @@
     repo_gpgcheck: "{{ item.repo_gpgcheck | default(None) or omit }}"
     sslcacert: "{{ item.sslcacert | default(None) or omit }}"
     sslverify: "{{ item.sslverify | default(None) or omit }}"
-  with_items: "{{ (_yum_repository + yum_repository) | unique }}"
+  with_items: "{{ _yum_repository }}"
   tags: varnish
 
 - name: yum install

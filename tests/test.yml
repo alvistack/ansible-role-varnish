@@ -37,6 +37,12 @@
         name: "varnish"
         state: "started"
 
+    - name: varnishd -V
+      shell: |
+        varnishd -V
+      register: varnishd_version_result
+      changed_when: varnishd_version_result.rc != 0
+
     - name: check port
       wait_for:
         port: "6081"

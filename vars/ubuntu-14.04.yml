@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _apt_key: [
-  { state: "present", id: "3E925951", url: "https://packagecloud.io/varnishcache/varnish5/gpgkey" },
+  { state: "present", id: "C23F55C5", url: "https://packagecloud.io/varnishcache/varnish5/gpgkey" },
 ]
 _apt_repository: [
   { state: "present", repo: "deb https://packagecloud.io/varnishcache/varnish5/ubuntu/ trusty main" },
