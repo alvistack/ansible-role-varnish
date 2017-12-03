@@ -54,6 +54,13 @@
   with_items: "{{ _template }}"
   tags: varnish
 
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: "yes"
+  changed_when: false
+  ignore_errors: "yes"
+  tags: varnish
+
 - name: enable service
   service:
     name: "varnish"
